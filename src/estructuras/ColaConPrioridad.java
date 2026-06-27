@@ -13,7 +13,6 @@ public class ColaConPrioridad {
         this.tamanio = 0;
     }
 
-    // Encola un ticket respetando prioridad (1=Alta va primero)
     public void enqueue(Ticket ticket) {
         Nodo<Ticket> nuevo = new Nodo<>(ticket);
         if (frente == null || ticket.getPrioridad() < frente.dato.getPrioridad()) {
@@ -22,9 +21,8 @@ public class ColaConPrioridad {
             if (fin == null) fin = nuevo;
         } else {
             Nodo<Ticket> actual = frente;
-            while (actual.siguiente != null && actual.siguiente.dato.getPrioridad() <= ticket.getPrioridad()) {
+            while (actual.siguiente != null && actual.siguiente.dato.getPrioridad() <= ticket.getPrioridad())
                 actual = actual.siguiente;
-            }
             nuevo.siguiente = actual.siguiente;
             actual.siguiente = nuevo;
             if (nuevo.siguiente == null) fin = nuevo;
@@ -32,9 +30,8 @@ public class ColaConPrioridad {
         tamanio++;
     }
 
-    // Desencola el ticket de mayor prioridad (el del frente)
     public Ticket dequeue() {
-        if (estaVacia()) { System.out.println("  Error: No hay tickets en la cola."); return null; }
+        if (estaVacia()) { return null; }
         Ticket dato = frente.dato;
         frente = frente.siguiente;
         if (frente == null) fin = null;
@@ -42,13 +39,11 @@ public class ColaConPrioridad {
         return dato;
     }
 
-    // Consulta el frente sin eliminarlo
     public Ticket peek() {
         if (estaVacia()) return null;
         return frente.dato;
     }
 
-    // Buscar ticket por ID — recorre toda la lista enlazada
     public Ticket buscarPorId(int id) {
         Nodo<Ticket> actual = frente;
         while (actual != null) {
@@ -58,7 +53,6 @@ public class ColaConPrioridad {
         return null;
     }
 
-    // Reencolar: extrae el ticket con ese ID y lo reinserta al final de su prioridad
     public boolean reencolar(int id) {
         if (estaVacia()) return false;
         Ticket encontrado = null;
@@ -69,9 +63,8 @@ public class ColaConPrioridad {
             tamanio--;
         } else {
             Nodo<Ticket> anterior = frente;
-            while (anterior.siguiente != null && anterior.siguiente.dato.getId() != id) {
+            while (anterior.siguiente != null && anterior.siguiente.dato.getId() != id)
                 anterior = anterior.siguiente;
-            }
             if (anterior.siguiente == null) return false;
             encontrado = anterior.siguiente.dato;
             if (anterior.siguiente == fin) fin = anterior;
@@ -82,9 +75,8 @@ public class ColaConPrioridad {
         return true;
     }
 
-    // Estadísticas: cuenta tickets por nivel de prioridad
     public int[] contarPorPrioridad() {
-        int[] conteo = new int[3]; // [0]=Alta, [1]=Media, [2]=Baja
+        int[] conteo = new int[3];
         Nodo<Ticket> actual = frente;
         while (actual != null) {
             conteo[actual.dato.getPrioridad() - 1]++;
@@ -93,11 +85,22 @@ public class ColaConPrioridad {
         return conteo;
     }
 
+    public Ticket[] toArray() {
+        Ticket[] arr = new Ticket[tamanio];
+        Nodo<Ticket> actual = frente;
+        for (int i = 0; i < tamanio; i++) {
+            arr[i] = actual.dato;
+            actual = actual.siguiente;
+        }
+        return arr;
+    }
+
+    public Nodo<Ticket> getFrente() { return frente; }
     public boolean estaVacia() { return frente == null; }
     public int getTamanio() { return tamanio; }
 
     public void mostrar() {
-        if (estaVacia()) { System.out.println("  (No hay tickets en espera)"); return; }
+        if (estaVacia()) { System.out.println("(No hay tickets en espera)"); return; }
         Nodo<Ticket> actual = frente;
         int pos = 1;
         while (actual != null) {
