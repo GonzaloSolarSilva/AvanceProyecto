@@ -13,7 +13,7 @@ public class SoporteTickets {
         GestorClientes   gestorClientes   = new GestorClientes();
 
         String menu =
-            "=== SISTEMA DE TICKETS - TechSupport S.A.C. ===\n\n" +
+            "=== SISTEMA DE TICKETS ===\n\n" +
             "[COLA CON PRIORIDAD]\n" +
             "  1.  Registrar nuevo ticket\n" +
             "  2.  Atender siguiente ticket (dequeue)\n" +

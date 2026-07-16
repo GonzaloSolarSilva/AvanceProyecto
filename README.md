@@ -22,8 +22,8 @@ tmb movi algunas cosas del main como los separadores pq al ejecutar estaba todo 
 
 ------------------------------------------- 
 SOLAR SILVA GONZALO — Refactor JOptionPane 1.1
-- Reemplazó el menú de consola por ventanas emergentes con JOptionPane
-- Corrigió bug de crash al ingresar letras en el menú principal
-- Corrigió bug del historial invertido al exportar (opción 12)
-- Corrigió bug de mensaje de error falso al eliminar categorías en el árbol binario
-- Agregó métodos auxiliares: `toArray()` en ColaConPrioridad, `toTexto()` en ListaEnlazada, `inorderTexto()` y `preorderTexto()` en ArbolBinarioBusqueda
+- Reemplace  el menú de consola por ventanas emergentes con JOptionPane
+- Corregí bug de crash al ingresar letras en el menú principal
+- Corregí bug del historial invertido al exportar (opción 12)
+- Corregí bug de mensaje de error falso al eliminar categorías en el árbol binario
+- Agregue métodos auxiliares: `toArray()` en ColaConPrioridad, `toTexto()` en ListaEnlazada, `inorderTexto()` y `preorderTexto()` en ArbolBinarioBusqueda
