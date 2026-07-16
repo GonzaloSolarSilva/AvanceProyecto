@@ -61,14 +61,14 @@ Aplicativo de escritorio desarrollado en Java que automatiza la gestión de tick
 
 ## Cambios por integrante
 
-### CABRERA VALENCIA ESIEN GABRIEL — Lista Enlazada 1.0
+### CABRERA VALENCIA ESIEN GABRIEL y Gonzalo León, Paolo Alessandro — Lista Enlazada 1.0
 - Agregó `entidades/Cliente.java` para guardar información de clientes
 - Agregó `estructuras/ListaEnlazada.java` usando la clase Nodo
 - Agregó `servicios/GestorClientes.java` con lógica CRUD de clientes
 - Modificó la clase main agregando el case 14 en el Switch
 - Ajustó separadores del menú y eliminó tildes para evitar caracteres especiales
 
-### SOLAR SILVA GONZALO — Refactor JOptionPane + Interfaz Swing
+### SOLAR SILVA GONZALO y Garay Llaja, Leonardo Luis — Refactor JOptionPane + Interfaz Swing
 - Reemplazó el menú de consola por ventanas emergentes con JOptionPane
 - Corrigió bug de crash al ingresar letras en el menú principal
 - Corrigió bug del historial invertido al exportar (opción 12)
