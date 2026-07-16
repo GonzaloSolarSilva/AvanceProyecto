@@ -41,7 +41,7 @@ SOLAR SILVA GONZALO — Refactor JOptionPane 1.1
 - Gonzalo León, Paolo Alessandro — U23246812
 - Solar Silva, Gonzalo — U23214609
 
-**Docente:** Anselmo Aniceto Valenzuela Zegarra  
+**Docente:** Genrry Alcántara  
 **Curso:** Algoritmos y Estructuras de Datos — UTP 2026
 
 ---
